@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>雷达</title>
+	<style type="text/css">
+	#main:after {
+	  content: ' ';
+	  display: block;
+	  background-image: linear-gradient(44deg, rgba(0, 255, 51, 0) 50%, #00ff33 100%);
+	  width: 180px;
+	  height: 180px;
+	  position: absolute;
+	  top: 14%;
+	  left: 14%;
+	  animation: radar-beam 4s infinite;
+	  animation-timing-function: linear;
+	  transform-origin: bottom right;
+	  border-radius: 100% 0 0 0;
+	}
+	@keyframes radar-beam {
+	  0% {
+	    transform: rotate(0deg);
+	  }
+	  100% {
+	    transform: rotate(360deg);
+	  }
+	}
+	</style>
+</head>
+<body>
+	<div id="main" style="position: relative;width: 500px;height: 500px;"></div>
+
+	<script src="https://cdn.bootcss.com/echarts/3.7.1/echarts.min.js"></script>
+	<script type="text/javascript" src="./radar.js"></script>
+	<script type="text/javascript">
+		var mockData = [{
+			text: '指标一',
+			value: 2
+		}, {
+			text: '指标二',
+			value: 3.2
+		}, {
+			text: '指标三',
+			value: 5
+		}, {
+			text: '指标四',
+			value: 4.1
+		}, {
+			text: '指标五',
+			value: 2.8
+		}];
+		
+
+		initRadar(mockData);
+	</script>
+</body>
+</html>
